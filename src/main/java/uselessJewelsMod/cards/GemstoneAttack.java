@@ -42,7 +42,7 @@ public class GemstoneAttack extends CustomCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 1;
+    public static final int DAMAGE = 1;
 
     // Hey want a second damage/magic/block/unique number??? Great!
     // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable

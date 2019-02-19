@@ -1,8 +1,10 @@
 package uselessJewelsMod.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import uselessJewelsMod.UselessJewelsMod;
@@ -24,6 +26,7 @@ public class GemstonePower extends CustomCard {
 
     private static final int COST = 0;
     private static final int BUFF_AMT = 1;
+    private static final int UPGRADE_BUFF_AMT = 1;
 
 
     public GemstonePower() {
@@ -37,12 +40,12 @@ public class GemstonePower extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(UPGRADE_BUFF_AMT);
         }
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UselessJewelsPower(p, this.magicNumber), this.magicNumber));
     }
 }

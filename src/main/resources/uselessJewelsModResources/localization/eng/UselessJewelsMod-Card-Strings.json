@@ -8,5 +8,9 @@
     "NAME" : "Worthless Gemstone",
     "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. Add a Worthless Gemstone into your hand. NL Exhaust. NL Ethereal."
+  },
+  "uselessJewelsMod:GemstonePower": {
+    "NAME" : "Pointless Gemstone",
+    "DESCRIPTION": "Increase the effects of all Gemstone cards by +!M! this combat."
   }
 }

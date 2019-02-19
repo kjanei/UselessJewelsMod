@@ -50,6 +50,10 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
         return getModID() + "Resources/images/relics/outline/" + resourcePath;
     }
 
+    public static String makePowerPath(String resourcePath) {
+        return getModID() + "Resources/images/powers/" + resourcePath;
+    }
+
     public UselessJewelsMod() {
         logger.info("Subscribing to BaseMod hooks.");
         BaseMod.subscribe(this);
