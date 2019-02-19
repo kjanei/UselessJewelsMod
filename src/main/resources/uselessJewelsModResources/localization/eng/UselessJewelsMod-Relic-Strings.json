@@ -1,0 +1,9 @@
+{
+  "uselessJewelsMod:UselessJewelsRelic": {
+    "NAME": "Useless Jewels",
+    "FLAVOR": "So shiny! ...what can we do with these, again?",
+    "DESCRIPTIONS": [
+      "At the start of your turn, randomly add one of three gemstone cards into your hand."
+    ]
+  }
+}

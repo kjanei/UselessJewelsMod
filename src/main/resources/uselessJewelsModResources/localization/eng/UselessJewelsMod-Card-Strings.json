@@ -1,0 +1,12 @@
+{
+  "uselessJewelsMod:GemstoneAttack": {
+    "NAME": "Useless Gemstone",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust. NL Ethereal."
+  },
+  "uselessJewelsMod:GemstoneSkill": {
+    "NAME" : "Worthless Gemstone",
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. Add a Worthless Gemstone into your hand. NL Exhaust. NL Ethereal."
+  }
+}
