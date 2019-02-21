@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>UselessJewelsMod</groupId>
     <artifactId>UselessJewelsMod</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.2</version>
     <name>UselessJewelsMod</name>
 
     <properties>
@@ -10,7 +10,8 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
-        <Steam.path>E:\Games\Steam\steamapps</Steam.path>
+        <Steam.path>C:\Program Files (x86)\Steam\steamapps\</Steam.path>
+        <!--<Steam.path>E:\Games\Steam\steamapps</Steam.path>-->
     </properties>
 
     <dependencies>
@@ -40,8 +41,6 @@
         </dependency>
     </dependencies>
 
-
-    <!-- This is how your code is packaged into the jar file-->
     <build>
         <finalName>UselessJewelsMod</finalName>
         <plugins>

@@ -3,7 +3,7 @@
   "name": "Useless Jewels Mod",
   "author_list": ["kjanei", "Entilliumn"],
   "description": "A simple mod that introduces one new relic, the Useless Jewels, and three related cards.",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "sts_version": "01-23-2019",
   "mts_version": "3.8.0",
   "dependencies": ["basemod"],

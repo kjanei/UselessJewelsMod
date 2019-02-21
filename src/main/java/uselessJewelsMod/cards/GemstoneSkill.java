@@ -39,7 +39,7 @@ public class GemstoneSkill extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.baseBlock));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         if(this.upgraded) {
             AbstractDungeon.player.hand.addToHand(new GemstoneSkill());
         }
