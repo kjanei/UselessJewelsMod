@@ -11,6 +11,7 @@ import basemod.interfaces.PostInitializeSubscriber;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import uselessJewelsMod.cards.GemstoneAttack;
@@ -117,12 +118,12 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
         logger.info("Adding cards.");
         BaseMod.addCard(new GemstoneAttack());
         BaseMod.addCard(new GemstoneSkill());
-//        BaseMod.addCard(new GemstonePower());
+        BaseMod.addCard(new GemstonePower());
 
         logger.info("Unlocking cards.");        // Unlock the cards, so that they are all "seen" in the library
         UnlockTracker.unlockCard(GemstoneAttack.ID);
         UnlockTracker.unlockCard(GemstoneSkill.ID);
-//        UnlockTracker.unlockCard(GemstonePower.ID);
+        UnlockTracker.unlockCard(GemstonePower.ID);
 
 
         logger.info("Done adding cards!");
@@ -137,6 +138,9 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
 
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + "Resources/localization/eng/UselessJewelsMod-Relic-Strings.json");
+
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+                getModID() + "Resources/localization/eng/UselessJewelsMod-Power-Strings.json");
 
         logger.info("Done editing strings.");
     }

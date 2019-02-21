@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import uselessJewelsMod.UselessJewelsMod;
+import uselessJewelsMod.powers.UselessJewelsPower;
 
 import static uselessJewelsMod.UselessJewelsMod.makeCardPath;
 
@@ -46,6 +47,6 @@ public class GemstonePower extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UselessJewelsPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UselessJewelsPower(p, p, this.magicNumber), this.magicNumber));
     }
 }

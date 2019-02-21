@@ -1,9 +1,8 @@
-package uselessJewelsMod.directory;
+package uselessJewelsMod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,12 +25,12 @@ public class UselessJewelsPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+    private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("uselessjewels_power84.png"));
+    private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("uselessjewels_power32.png"));
 
     public UselessJewelsPower(final AbstractCreature owner, final AbstractCreature source, final int amount){
         this.name = NAME;
-        this.ID = ID;
+        this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
@@ -62,7 +61,6 @@ public class UselessJewelsPower extends AbstractPower {
         iterator = AbstractDungeon.player.exhaustPile.group.iterator();
 
         this.updateCardsInCollection(iterator);
-
     }
 
     private void updateCardsInCollection(Iterator<AbstractCard> iterator){
