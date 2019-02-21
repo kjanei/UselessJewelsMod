@@ -35,14 +35,30 @@ public class UselessJewelsPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.source = source;
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 
-        type = PowerType.BUFF;
+        this.type = PowerType.BUFF;
         this.isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         this.updateDescription();
+        this.updateExistingGemstones();
+    }
+
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        this.updateDescription();
+        this.updateExistingGemstones();
+    }
+
+    @Override
+    public void onDrawOrDiscard(){
+        Iterator<AbstractCard> iterator = AbstractDungeon.player.hand.group.iterator();
+
+        this.updateCardsInCollection(iterator);
     }
 
     private void updateExistingGemstones() {
@@ -72,13 +88,6 @@ public class UselessJewelsPower extends AbstractPower {
                 c.baseBlock = GemstoneSkill.BLOCK + this.amount;
             }
         }
-    }
-
-    @Override
-    public void onDrawOrDiscard(){
-        Iterator<AbstractCard> iterator = AbstractDungeon.player.hand.group.iterator();
-
-        this.updateCardsInCollection(iterator);
     }
 
 }

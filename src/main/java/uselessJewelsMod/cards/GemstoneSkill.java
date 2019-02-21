@@ -38,9 +38,6 @@ public class GemstoneSkill extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.isEthereal = true;
-        // Aside from baseDamage/MagicNumber/Block there's also a few more.
-        // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
-
         this.baseBlock = BLOCK;
     }
 
@@ -55,7 +52,7 @@ public class GemstoneSkill extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, BLOCK));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.baseBlock));
 
         if(this.upgraded) {
             AbstractDungeon.player.hand.addToHand(new GemstoneSkill());

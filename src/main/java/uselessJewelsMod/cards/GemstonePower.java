@@ -47,6 +47,6 @@ public class GemstonePower extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UselessJewelsPower(p, p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new UselessJewelsPower(p, p, this.magicNumber), this.magicNumber));
     }
 }
