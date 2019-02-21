@@ -8,6 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 
+
+// Copied from Default Mod, written by Blank the Evil. Thanks to both Gremious and Blank!
 public class TextureLoader {
     private static HashMap<String, Texture> textures = new HashMap<String, Texture>();
     public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());

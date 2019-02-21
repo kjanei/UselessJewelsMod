@@ -17,24 +17,13 @@ import static uselessJewelsMod.UselessJewelsMod.makeCardPath;
 
 public class GemstoneAttack extends CustomCard {
 
-    /*
-     * Wiki-page: https://github.com/daviscook477/BaseMod/wiki/Custom-Cards
-     *
-     * Strike Deal 7(9) damage.
-     */
-
-    // TEXT DECLARATION
-
     public static final String ID = UselessJewelsMod.makeID("GemstoneAttack");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("uselessstoneBETA.png");
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget INITIAL_TARGET = CardTarget.ENEMY;
@@ -44,24 +33,14 @@ public class GemstoneAttack extends CustomCard {
     private static final int COST = 0;
     public static final int DAMAGE = 1;
 
-    // Hey want a second damage/magic/block/unique number??? Great!
-    // Go check out DefaultAttackWithVariable and theDefault.variable.DefaultCustomVariable
-    // that's how you get your own custom variable that you can use for anything you like.
-    // Feel free to explore other mods to see what variables they personally have and create your own ones.
-
-    // /STAT DECLARATION/
 
     public GemstoneAttack() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, INITIAL_TARGET);
         this.exhaust = true;
         this.isEthereal = true;
-        // Aside from baseDamage/MagicNumber/Block there's also a few more.
-        // Just type this.base and let intelliJ auto complete for you, or, go read up AbstractCard
-
         baseDamage = DAMAGE;
     }
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(this.upgraded){
@@ -76,7 +55,6 @@ public class GemstoneAttack extends CustomCard {
         }
     }
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!this.upgraded) {

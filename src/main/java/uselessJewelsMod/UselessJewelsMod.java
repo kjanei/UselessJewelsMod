@@ -24,7 +24,6 @@ import uselessJewelsMod.util.TextureLoader;
 
 @SpireInitializer
 public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber {
-
     public static final Logger logger = LogManager.getLogger(UselessJewelsMod.class.getName());
     private static String modID;
 
@@ -42,18 +41,16 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
     }
-
     public static String makeRelicPath(String resourcePath) {
         return getModID() + "Resources/images/relics/" + resourcePath;
     }
-
     public static String makeRelicOutlinePath(String resourcePath) {
         return getModID() + "Resources/images/relics/outline/" + resourcePath;
     }
-
     public static String makePowerPath(String resourcePath) {
         return getModID() + "Resources/images/powers/" + resourcePath;
     }
+
 
     public UselessJewelsMod() {
         logger.info("Subscribing to BaseMod hooks.");
@@ -70,12 +67,10 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
         modID = ID;
     }
 
-
-
     @SuppressWarnings("unused")
     public static void initialize() {
         logger.info("Initializing Useless Jewels mod.");
-        UselessJewelsMod uselessJewelsMod = new UselessJewelsMod();
+        new UselessJewelsMod();
         logger.info("Initialized Useless Jewels mod.");
     }
 
@@ -108,23 +103,16 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
 
     @Override
     public void receiveEditCards() {
-//        logger.info("Adding variables");
-//        // Add the Custom Dynamic Variables
-//        logger.info("Add variabls");
-//        // Add the Custom Dynamic variabls
-//        BaseMod.addDynamicVariable(new DefaultCustomVariable());
-//        BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-
         logger.info("Adding cards.");
         BaseMod.addCard(new GemstoneAttack());
         BaseMod.addCard(new GemstoneSkill());
         BaseMod.addCard(new GemstonePower());
 
-        logger.info("Unlocking cards.");        // Unlock the cards, so that they are all "seen" in the library
+        // Unlock the cards, so that they are all "seen" in the library
+        logger.info("Unlocking cards.");
         UnlockTracker.unlockCard(GemstoneAttack.ID);
         UnlockTracker.unlockCard(GemstoneSkill.ID);
         UnlockTracker.unlockCard(GemstonePower.ID);
-
 
         logger.info("Done adding cards!");
     }
@@ -132,16 +120,12 @@ public class UselessJewelsMod implements EditCardsSubscriber, EditRelicsSubscrib
     @Override
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings.");
-
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 getModID() + "Resources/localization/eng/UselessJewelsMod-Card-Strings.json");
-
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + "Resources/localization/eng/UselessJewelsMod-Relic-Strings.json");
-
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 getModID() + "Resources/localization/eng/UselessJewelsMod-Power-Strings.json");
-
         logger.info("Done editing strings.");
     }
 

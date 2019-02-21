@@ -28,13 +28,13 @@ public class UselessJewelsPower extends AbstractPower {
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("uselessjewels_power84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("uselessjewels_power32.png"));
 
-    public UselessJewelsPower(final AbstractCreature owner, final AbstractCreature source, final int amount){
+
+    public UselessJewelsPower(final AbstractCreature owner, final int amount){
         this.name = NAME;
         this.ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
-        this.source = source;
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 
         this.type = PowerType.BUFF;

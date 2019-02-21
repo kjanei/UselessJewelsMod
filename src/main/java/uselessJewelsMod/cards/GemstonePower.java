@@ -13,6 +13,7 @@ import uselessJewelsMod.powers.UselessJewelsPower;
 import static uselessJewelsMod.UselessJewelsMod.makeCardPath;
 
 public class GemstonePower extends CustomCard {
+
     public static final String ID = UselessJewelsMod.makeID("GemstonePower");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
@@ -38,15 +39,15 @@ public class GemstonePower extends CustomCard {
     }
 
     @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new UselessJewelsPower(p, this.magicNumber), this.magicNumber));
+    }
+
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_BUFF_AMT);
         }
-    }
-
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new UselessJewelsPower(p, p, this.magicNumber), this.magicNumber));
     }
 }
