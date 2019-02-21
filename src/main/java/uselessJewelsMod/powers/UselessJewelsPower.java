@@ -35,7 +35,6 @@ public class UselessJewelsPower extends AbstractPower {
 
         this.owner = owner;
         this.amount = amount;
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
 
         this.type = PowerType.BUFF;
         this.isTurnBased = false;
@@ -88,6 +87,11 @@ public class UselessJewelsPower extends AbstractPower {
                 c.baseBlock = GemstoneSkill.BLOCK + this.amount;
             }
         }
+    }
+
+    @Override
+    public void updateDescription(){
+        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
 }

@@ -1,6 +1,6 @@
 {
   "uselessJewelsMod:UselessJewelsPower": {
     "NAME": "Polished",
-    "DESCRIPTIONS": ["The effects of Useless Gemstone and Worthless Gemstone are increased by ","."]
+    "DESCRIPTIONS": ["The effects of #yUseless #yGemstone and #yWorthless #yGemstone are increased by #b","."]
   }
 }
